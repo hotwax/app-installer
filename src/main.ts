@@ -27,7 +27,6 @@ import '@ionic/vue/css/display.css';
 import './theme/variables.css';
 
 import i18n from './i18n'
-import store from './store'
 
 const app = createApp(App)
   .use(IonicVue, {
@@ -35,7 +34,6 @@ const app = createApp(App)
   })
   .use(router)
   .use(i18n)
-  .use(store);
 
 // Filters are removed in Vue 3 and global filter introduced https://v3.vuejs.org/guide/migration/filters.html#global-filters
 app.config.globalProperties.$filters = {
@@ -43,13 +41,6 @@ app.config.globalProperties.$filters = {
     // TODO Use Loxon instead
     // TODO Make default format configurable and from environment variables
     return moment(value, inFormat).format(outFormat ? outFormat : 'MM-DD-YYYY');
-  },
-  formatUtcDate(value: any, inFormat?: string, outFormat?: string) {
-    // TODO Use Loxon instead
-    // TODO Make default format configurable and from environment variables
-    const userProfile = store.getters['user/getUserProfile'];
-    // TODO Fix this setDefault should set the default timezone instead of getting it everytiem and setting the tz
-    return moment.utc(value, inFormat).tz(userProfile.userTimeZone).format(outFormat ? outFormat : 'MM-DD-YYYY');
   },
   getFeature(featureHierarchy: any, featureKey: string) {
     let  featureValue = ''
