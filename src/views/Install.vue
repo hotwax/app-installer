@@ -8,26 +8,26 @@
           <ion-list>
             <ion-radio-group value="oms">
               <ion-list-header>
-                <ion-label>Apps</ion-label>
+                <ion-label>{{ $t("Apps") }}</ion-label>
               </ion-list-header>
 
               <ion-item>
-                <ion-label>OMS</ion-label>
+                <ion-label>{{ $t("OMS") }}</ion-label>
                 <ion-radio slot="start" value="oms"></ion-radio>
               </ion-item>
 
               <ion-item>
-                <ion-label>PDP Pre-order</ion-label>
+                <ion-label>{{ $t("PDP Pre-order") }}</ion-label>
                 <ion-radio slot="start" value="ppo"></ion-radio>
               </ion-item>
 
               <ion-item>
-                <ion-label>PDP BOPIS</ion-label>
+                <ion-label>{{ $t("PDP BOPIS") }}</ion-label>
                 <ion-radio slot="start" value="pbp"></ion-radio>
               </ion-item>
 
                <ion-item lines="none">
-                <ion-label>BOPIS</ion-label>
+                <ion-label>{{ $t("BOPIS") }}</ion-label>
                 <ion-radio slot="start" value="bopis"></ion-radio>
               </ion-item>
             </ion-radio-group>
